@@ -20,11 +20,12 @@ fun main(args: Array<String>) {
     }
 
     // c) Using Array with constructor;
-    val arrayC = Array(50 {(it + 1) * (it + 1)})
+    val arrayC = Array(50) {(it + 1) * (it + 1)}
     //O construtor Array é uma forma mais genérica de IntArray, e funciona de forma idêntica
     println("c)")
     for (num in arrayC) {
         println(num)
     }
 }
+
 
