@@ -50,6 +50,30 @@ fun main(args: Array<String>) {
                 }
                 println("\nResultado: $resultado")
             }
+            // AND / OR
+            5, 6 -> {
+                print("Insira o primeiro booleano (true/false): ")
+                val b1 = readLine()!!.toBoolean()
+                print("Insira o segundo boolean (true/false): ")
+                val b2 = readLine()!!.toBoolean()
+
+                val resultado = when(escolha) {
+                    5 -> b1 && b2
+                    6 -> b1 || b2
+                    else -> false
+                }
+
+                println("\nResultado: $resultado")
+            }
+
+            // NOT
+            7 -> {
+                print("Insira um booleano (true/false): ")
+                val b = readLine()!!.toBoolean()
+                val resultado = !b
+                println("\nResultado: $resultado")
+            }
+
         }
     }
 
