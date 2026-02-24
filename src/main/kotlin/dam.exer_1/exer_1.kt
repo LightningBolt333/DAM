@@ -1,3 +1,5 @@
+package dam.exer_1
+
 fun main(args: Array<String>) {
     // Create and initialize an integer array with the first 50 perfect squares (1^2 , 2^2 , 3^2 , ..., 50^2) dinamically, using the following:
     // a) Using IntArray constructor;
