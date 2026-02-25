@@ -7,7 +7,7 @@ fun main(args: Array<String>) {
         //generateSequence aplica sequencialmente o lambda a partir da seed
         .takeWhile { it >= 1 } //seleciona da sequencia todos os maiores que 1
 
-    println(sequence.toList())
+    println(sequence.toList()) //transforma em lista
 
 
 
