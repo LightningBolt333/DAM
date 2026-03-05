@@ -45,4 +45,15 @@ class Library(val libraryName: String) {
             results.forEach{println("-> ${it.title} (${it.availableCopies} available)")}
         }
     }
+
+    companion object{
+        private var totalBooksCreated: Int = 0
+        fun getTotalBooksCreated(): Int = totalBooksCreated
+    }
 }
+
+data class LibraryMember(
+    val name: String,
+    val membershipId: String,
+    val borrowedBooks: MutableList<String> = mutableListOf()
+)
