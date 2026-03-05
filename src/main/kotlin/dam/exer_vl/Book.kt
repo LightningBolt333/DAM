@@ -1,9 +1,6 @@
 package dam.exer_vl
 
-abstract class Book(val title: String,
-    val author: String,
-    val publicationYear: Int,
-    initialCopies: Int){
+abstract class Book(val title: String, val author: String, val publicationYear: Int, initialCopies: Int){
 
     // getter da era baseada no ano
     val era: String get() = when{
@@ -27,6 +24,14 @@ abstract class Book(val title: String,
     init {
         println("Book '$title' by $author has been added to the library.")
     }
-
-
 }
+
+class DigitalBook(title: String, author: String, publicationYear: Int, availableCopies: Int,
+    val fileSize: Double, val format: String): Book(title, author, publicationYear, availableCopies){
+
+    }
+
+class PhysicalBook(title: String, author: String, publicationYear: Int, availableCopies: Int,
+    val weight: Int, val hasHardcover: Boolean = true): Book(title, author, publicationYear, availableCopies){
+
+    }
