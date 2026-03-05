@@ -24,14 +24,34 @@ abstract class Book(val title: String, val author: String, val publicationYear: 
     init {
         println("Book '$title' by $author has been added to the library.")
     }
+
+    abstract fun getStorageInfo(): String
+
+    override fun toString(): String{
+        return "Title: $title, Author: $author, Era: $era, Available: $availableCopies copies"
+    }
 }
 
 class DigitalBook(title: String, author: String, publicationYear: Int, availableCopies: Int,
     val fileSize: Double, val format: String): Book(title, author, publicationYear, availableCopies){
+    override fun getStorageInfo(): String {
+        return "Stored digitally: $fileSize MB, Format: $format"
+    }
 
+    override fun toString(): String{
+        return super.toString() + "\nStorage: ${getStorageInfo()}"
+    }
     }
 
 class PhysicalBook(title: String, author: String, publicationYear: Int, availableCopies: Int,
     val weight: Int, val hasHardcover: Boolean = true): Book(title, author, publicationYear, availableCopies){
 
+    override fun getStorageInfo(): String {
+        val coverType = if(hasHardcover) "Yes" else "No"
+        return "Physical book: ${weight}g, Hardcover: $coverType"
+    }
+
+    override fun toString(): String {
+        return super.toString() + "\nStorage: ${getStorageInfo()}"
+    }
     }
