@@ -30,4 +30,19 @@ class Library(val libraryName: String) {
             println("Error: Book '$title' does not belong to this library!")
         }
     }
+
+    fun showBooks(){
+        println("\n===: Library Catalog :===")
+        books.forEach {println(it)}
+    }
+
+    fun searchByAuthor(author: String){
+        println("\nBooks written by $author:")
+        val results = books.filter{it.author.equals(author, ignoreCase = true)}
+        if(results.isEmpty()){
+            println("No books by $author found!")
+        } else {
+            results.forEach{println("-> ${it.title} (${it.availableCopies} available)")}
+        }
+    }
 }
