@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <ImageView
+        android:id="@+id/ivAbilityIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/colorSurfaceVariant"
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@android:drawable/ic_menu_gallery" />
+
+    <TextView
+        android:id="@+id/tvAbilityType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textAllCaps="true"
+        android:textAppearance="?attr/textAppearanceLabelSmall"
+        android:textColor="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivAbilityIcon"
+        app:layout_constraintTop_toTopOf="@id/ivAbilityIcon"
+        tools:text="BASIC ATTACK" />
+
+    <TextView
+        android:id="@+id/tvAbilityName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivAbilityIcon"
+        app:layout_constraintTop_toBottomOf="@id/tvAbilityType"
+        tools:text="Strike of the Wind" />
+
+    <TextView
+        android:id="@+id/tvAbilityDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivAbilityIcon"
+        tools:text="Deals physical damage equal to 100% of ATK. \n**Effect:** Applies [Bleed] for 2 turns." />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
