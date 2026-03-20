@@ -10,6 +10,7 @@ sealed class Event {
 
 //extension functions permitem adicionar funcionalidades e métodos novos a classes já existentes, como List, sem alterar o seu source code
 fun List<Event>.filterByUser(username: String): List<Event> {
+    //pega no username e retorna os eventos a si associados
     return this.filter {
         when (it) {
             is Event.Login -> it.username == username
@@ -17,4 +18,9 @@ fun List<Event>.filterByUser(username: String): List<Event> {
             is Event.Logout -> it.username == username
         }
     }
+}
+
+fun List<Event>.totalSpent(username: String): Double {
+    //pega no username e retorna o gasto total desse user, filtrado de todas as compras existentes
+    return this.filterIsInstance<Event.Purchase>().filter {it.username == username}.sumOf {it.amount}
 }
