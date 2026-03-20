@@ -8,6 +8,7 @@ sealed class Event {
     data class Logout(val username: String, val timestamp: Long) : Event()
 }
 
+//extension functions permitem adicionar funcionalidades e métodos novos a classes já existentes, como List, sem alterar o seu source code
 fun List<Event>.filterByUser(username: String): List<Event> {
     return this.filter {
         when (it) {
