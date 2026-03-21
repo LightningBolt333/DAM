@@ -83,7 +83,7 @@ fun main(){
     println("After evict id 1, size: ${idRegistry.size()}")
     println("Id 1 after evict -> ${idRegistry.get(1)}")
 
-    val filtered = wordCache.filterValues {it < 0}
-    println("Words with count <0: $filtered")
+    val filtered = wordCache.filterValues {it > 0}
+    println("Words with count >0: $filtered")
 }
 
