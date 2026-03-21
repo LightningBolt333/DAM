@@ -39,5 +39,9 @@ class Cache<K, V> {
             false
         }
     }
+
+    fun snapshot(): Map<K, V> {
+       return storage.toMap()
+    }
 }
 
