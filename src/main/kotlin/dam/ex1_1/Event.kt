@@ -1,4 +1,4 @@
-package dam
+package dam.ex1_1
 
 sealed class Event {
     //Classes sealed são usadas para representar uma hierarquia de classes restrita. Netse caso é ideal porque um evento só pode ser destes 3 tipos
@@ -35,13 +35,13 @@ fun processEvents(events: List<Event>, handler: (Event) -> Unit) {
 fun main() {
 
     val events = listOf (
-        Event.Login ("alice", 1000),
-        Event.Purchase ("alice", 49.99, 1100),
-        Event.Purchase ("bob", 19.99, 1200),
-        Event.Login ("bob", 1050),
-        Event.Purchase ("alice", 15.00, 1300),
-        Event.Logout ("alice", 1400),
-        Event.Logout ("bob", 1500)
+        Event.Login("alice", 1000),
+        Event.Purchase("alice", 49.99, 1100),
+        Event.Purchase("bob", 19.99, 1200),
+        Event.Login("bob", 1050),
+        Event.Purchase("alice", 15.00, 1300),
+        Event.Logout("alice", 1400),
+        Event.Logout("bob", 1500)
     )
 
     processEvents(events) { event ->
