@@ -43,6 +43,10 @@ class Cache<K, V> {
     fun snapshot(): Map<K, V> {
        return storage.toMap()
     }
+
+    fun filterValues(predicate: (V) -> Boolean): Map<K, V>{
+        return storage.filterValues(predicate)
+    }
 }
 
 fun main(){
