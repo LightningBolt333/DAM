@@ -27,5 +27,17 @@ class Cache<K, V> {
             defaultValue
         }
     }
+
+    //em kotlin podemos retornar o resultado de um if sem ter return statements
+    fun transform(key: K, action: (V) -> V): Boolean {
+        val currentV = get(key)
+        return if(currentV != null){
+            val newVal = action(currentV)
+            put(key, newVal)
+            true
+        }else{
+            false
+        }
+    }
 }
 
