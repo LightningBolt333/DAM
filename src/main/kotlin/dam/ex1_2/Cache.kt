@@ -16,4 +16,16 @@ class Cache<K, V> {
     }
 
     fun size(): Int = storage.size
+
+    fun getOrPut(key: K, default: () -> V): V{
+        val current = get(key)
+        return if (current != null) {
+            current
+        }else{
+            val defaultValue = default()
+            put(key, defaultValue)
+            defaultValue
+        }
+    }
 }
+
