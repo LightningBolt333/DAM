@@ -24,3 +24,10 @@ fun List<Event>.totalSpent(username: String): Double {
     //pega no username e retorna o gasto total desse user, filtrado de todas as compras existentes
     return this.filterIsInstance<Event.Purchase>().filter {it.username == username}.sumOf {it.amount}
 }
+
+//higher-order functions são funções que usam outras funções como parâmetros
+//também podem retornar uma função como resultado
+//neste caso usa umafunção que pega num objeto Event e retorna nada (unit no kotlin é equivalente a void no java, mas é um objeto em vez de ser nada)
+fun processEvent(events: List<Event>, handler: (Event) -> Unit) {
+    events.forEach {handler(it)}
+}
