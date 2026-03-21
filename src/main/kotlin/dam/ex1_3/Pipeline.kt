@@ -12,8 +12,14 @@ class Pipeline {
         var currentResult = input
 
         for((_, transform) in stages){
+            //destructing underscore pede ao compiler para ignorar a variável que substitui, porque não vai ser usada
             currentResult = transform(currentResult)
         }
         return currentResult
+    }
+
+    fun describe(){
+        println("Pipeline stages: ")
+        stages.forEachIndexed {index, (name, _) -> println("${index + 1}.$name")}
     }
 }
