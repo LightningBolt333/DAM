@@ -45,3 +45,38 @@ class Cache<K, V> {
     }
 }
 
+fun main(){
+    println("--- Word frequency cache ---")
+    val wordCache = Cache<String, Int>()
+    wordCache.put("kotlin", 1)
+    wordCache.put("scala", 1)
+    wordCache.put("haskell", 1)
+
+    println("Size: ${wordCache.size()}")
+    println("Frequency of \"kotlin\": ${wordCache.get("kotlin")}")
+
+    println("getOrPut \"kotlin\": ${wordCache.getOrPut("kotlin") { 0 }}")
+    println("getOrPut \"java\": ${wordCache.getOrPut("java") { 0 }}")
+    println("Size after getOrPut: ${wordCache.size()}")
+
+    val transformed = wordCache.transform("kotlin") { it + 1 }
+    println("Transform \"kotlin\" (+1): $transformed")
+
+    val missingTransformed = wordCache.transform("cobol") { it + 1 }
+    println("Transform \"cobol\" (+1): $missingTransformed")
+
+    println("Snapshot: ${wordCache.snapshot()}")
+
+    println("\n--- Id registry cache ---")
+    val idRegistry = Cache<Int, String>()
+    idRegistry.put(1, "Alice")
+    idRegistry.put(2, "Bob")
+
+    println("Id 1 -> ${idRegistry.get(1)}")
+    println("Id 2 -> ${idRegistry.get(2)}")
+
+    idRegistry.evict(1)
+    println("After evict id 1, size: ${idRegistry.size()}")
+    println("Id 1 after evict -> ${idRegistry.get(1)}")
+}
+
