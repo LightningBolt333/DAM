@@ -1,6 +1,7 @@
 package dam.ex1_3
 
 class Pipeline {
+    //uma pipeline é um padrão de design em que uma sequencia de estágios de processamento estão conectados em série, o output de um é o input da próxima
     private val stages = mutableListOf<Pair<String, (List<String>) -> List<String>>>()
 
     fun addStage(name: String, transform: (List<String>) -> List<String>) {
@@ -21,5 +22,13 @@ class Pipeline {
     fun describe(){
         println("Pipeline stages: ")
         stages.forEachIndexed {index, (name, _) -> println("${index + 1}.$name")}
+    }
+
+    fun buildPipeline(action: Pipeline.() -> Unit): Pipeline {
+        //criamos uma instancia da classe Pipeline, aplicamos o lambda e retornamos o resultado
+        //neste caso action acaba com a necessidade de chamar a ação que pretendemos fazer diretamente todas as vezes
+        val pipeline = Pipeline()
+        pipeline.action()
+        return pipeline
     }
 }
