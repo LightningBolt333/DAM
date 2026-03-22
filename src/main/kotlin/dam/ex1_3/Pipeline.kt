@@ -24,6 +24,23 @@ class Pipeline {
         stages.forEachIndexed {index, (name, _) -> println("${index + 1}.$name")}
     }
 
+    fun compose(name1: String, name2: String, newName: String){
+        //encontra as 2 funções existentes pelos seus nomes
+        val stage1 = stages.find{it.first == name1}?.second
+        val stage2 = stages.find{it.first == name2}?.second
+
+        if (stage1 != null && stage2 != null) {
+            //cria uma função composta
+            //de acordo com a lógica de "andThen": resultado = g(f(input))
+            val combination: (List<String>) -> List<String> = {input ->
+                val firstResult = stage1(input)
+                stage2(firstResult)
+            }
+
+            addStage(newName, combination)
+        }
+    }
+
 
 }
 
@@ -34,6 +51,8 @@ fun buildPipeline(action: Pipeline.() -> Unit): Pipeline {
     pipeline.action()
     return pipeline
 }
+
+
 
 fun main() {
     val logs = listOf(
