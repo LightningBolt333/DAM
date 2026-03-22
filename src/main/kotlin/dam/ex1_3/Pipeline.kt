@@ -24,11 +24,45 @@ class Pipeline {
         stages.forEachIndexed {index, (name, _) -> println("${index + 1}.$name")}
     }
 
-    fun buildPipeline(action: Pipeline.() -> Unit): Pipeline {
-        //criamos uma instancia da classe Pipeline, aplicamos o lambda e retornamos o resultado
-        //neste caso action acaba com a necessidade de chamar a ação que pretendemos fazer diretamente todas as vezes
-        val pipeline = Pipeline()
-        pipeline.action()
-        return pipeline
+
+}
+
+fun buildPipeline(action: Pipeline.() -> Unit): Pipeline {
+    //criamos uma instancia da classe Pipeline, aplicamos o lambda e retornamos o resultado
+    //neste caso action acaba com a necessidade de chamar a ação que pretendemos fazer diretamente todas as vezes
+    val pipeline = Pipeline()
+    pipeline.action()
+    return pipeline
+}
+
+fun main() {
+    val logs = listOf(
+        " INFO : server started ",
+        " ERROR : disk full ",
+        " DEBUG : checking config ",
+        " ERROR : out of memory ",
+        " INFO : request received ",
+        " ERROR : connection timeout "
+    )
+
+    val logPipeline = buildPipeline {
+        addStage("Trim") { list ->
+            list.map { it.trim() }
+        }
+        addStage("Filter errors") { list ->
+            list.filter { it.contains("ERROR") }
+        }
+        addStage("Uppercase") { list ->
+            list.map { it.uppercase() }
+        }
+        addStage("Add index") { list ->
+            list.mapIndexed { index, line -> "${index + 1}. $line" }
+        }
     }
+
+    logPipeline.describe()
+
+    val result = logPipeline.execute(logs)
+    println("\nResult:")
+    result.forEach { println(it) }
 }
