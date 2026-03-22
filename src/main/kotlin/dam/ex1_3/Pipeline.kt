@@ -41,7 +41,10 @@ class Pipeline {
         }
     }
 
-
+    fun fork(p1: Pipeline, p2: Pipeline, input: List<String>): Pair<List<String>, List<String>>{
+        //Pair representa um par genérico de 2 valores
+        return Pair(p1.execute(input), p2.execute(input))
+    }
 }
 
 fun buildPipeline(action: Pipeline.() -> Unit): Pipeline {
