@@ -20,4 +20,10 @@ data class Vec2(val x: Double, val y: Double) {
         if (magnitude == 0.0) throw IllegalStateException("Cannot normalize zero vector")
         return Vec2(x / magnitude, y / magnitude)
     }
+
+    operator fun get(index: Int): Double = when (index) {
+        0 -> x
+        1 -> y
+        else -> throw IndexOutOfBoundsException("Invalid vector index: $index")
+    }
 }
