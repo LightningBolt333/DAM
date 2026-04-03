@@ -12,4 +12,12 @@ data class Vec2(val x: Double, val y: Double) {
     operator fun compareTo(other: Vec2): Int {
         return this.magnitude().compareTo(other.magnitude())
     }
+
+    fun dot(other: Vec2): Double = x * other.x + y * other.y
+
+    fun normalized(): Vec2 {
+        val magnitude = magnitude()
+        if (magnitude == 0.0) throw IllegalStateException("Cannot normalize zero vector")
+        return Vec2(x / magnitude, y / magnitude)
+    }
 }
