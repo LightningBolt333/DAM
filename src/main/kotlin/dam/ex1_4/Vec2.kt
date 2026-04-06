@@ -28,4 +28,7 @@ data class Vec2(val x: Double, val y: Double) {
     }
 
     operator fun Double.times(vec: Vec2): Vec2 = vec * this
+
+    operator fun Vec2.component1() = x
+    operator fun Vec2.component2() = y
 }
