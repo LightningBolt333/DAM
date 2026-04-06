@@ -26,4 +26,6 @@ data class Vec2(val x: Double, val y: Double) {
         1 -> y
         else -> throw IndexOutOfBoundsException("Invalid vector index: $index")
     }
+
+    operator fun Double.times(vec: Vec2): Vec2 = vec * this
 }
