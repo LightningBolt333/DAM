@@ -9,7 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
-    private var isDaytime: Boolean = true
+    private var isDaytime: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val orientation = resources.configuration.orientation
