@@ -8,4 +8,6 @@
     <string name="textWindSpeed">Wind Speed</string>
     <string name="textTemperature">Temperature</string>
     <string name="textTime">Time</string>
+    <string name="textPressure">Pressure</string>
+
 </resources>

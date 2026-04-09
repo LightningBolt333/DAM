@@ -2,6 +2,11 @@ package dam.A51446.coolweatherapp
 
 import android.content.res.Configuration
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -11,10 +16,15 @@ import java.io.InputStreamReader
 import java.net.URL
 
 class MainActivity : AppCompatActivity() {
-
     private var isDaytime: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        //como o recerate apaga variaveis temporarias, pode reiniciar esta
+        //portanto verificar estado antes de criar a view
+        if (savedInstanceState != null) {
+            isDaytime = savedInstanceState.getBoolean("isDaytime", false)
+        }
+
         val orientation = resources.configuration.orientation
         //aplicar tema
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
@@ -32,25 +42,95 @@ class MainActivity : AppCompatActivity() {
         }
 
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val btnUpdate = findViewById<Button>(R.id.button)
+        val editLat = findViewById<EditText>(R.id.editLatitude)
+        val editLong = findViewById<EditText>(R.id.editLongitude)
+
+        btnUpdate.setOnClickListener {
+            val lat = editLat.text.toString()
+            val lon = editLong.text.toString()
+
+            if (lat.isNotEmpty() && lon.isNotEmpty()) {
+                Thread {
+                    val weatherData = WeatherAPI_Call().getWeatherData(lat, lon)
+
+                    runOnUiThread {
+                        if (weatherData != null) {
+                            updateUI(weatherData)
+                        } else {
+                            Toast.makeText(this, "Error fetching data", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }.start()
+            }
         }
     }
 
-    private fun WeatherAPI_Call(lat: Float, long: Float): WeatherData {
-        val reqString = buildString {
-            append("https://api.open-meteo.com/v1/forecast?")
-            append("latitude=${lat}&longitude=${long}&")
-            append("current_weather=true&")
-            append("hourly=temperature_2m,weathercode,pressure_msl,windspeed_10m")
+    //para salvar a variável duarnte o recereate
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putBoolean("isDaytime", isDaytime)
+    }
+
+    class WeatherAPI_Call {
+        fun getWeatherData(lat: String, lon: String): WeatherData? {
+            return try {
+                val urlString =
+                    "https://api.open-meteo.com/v1/forecast?latitude=$lat&longitude=$lon&current_weather=true&hourly=pressure_msl"
+                val response = URL(urlString).readText()
+
+                Gson().fromJson(response, WeatherData::class.java)
+            } catch (e: Exception) {
+                e.printStackTrace()
+                null
+            }
         }
-        val url = URL(reqString)
-        url.openStream().use {
-            return Gson().fromJson(InputStreamReader(it, "UTF-8"), WeatherData::class.java)
+    }
+
+    private fun updateUI(data: WeatherData) {
+        val current = data.current_weather
+
+        // determinar se é dia ou noite
+        val apiIsDay = current.is_day == 1
+
+        runOnUiThread {
+            val weatherImage: ImageView = findViewById(R.id.weatherIcon)
+            val pressure: TextView = findViewById(R.id.pressureValue)
+
+            findViewById<TextView>(R.id.temperature).text = "${current.temperature} ºC"
+            findViewById<TextView>(R.id.windSpeed).text = "${current.windspeed} km/h"
+
+            findViewById<TextView>(R.id.windDir).text = "${current.winddirection} º"
+            findViewById<TextView>(R.id.Time).text = current.time
+
+            pressure.text = data.hourly.pressure_msl.get(12).toString() + " hPa"
+
+            // icon
+            val mapt = getWeatherCodeMap()
+            val wCode = mapt.get(current.weathercode)
+
+            val wImage = when (wCode) {
+                WMO_WeatherCode.CLEAR_SKY,
+                WMO_WeatherCode.MAINLY_CLEAR,
+                WMO_WeatherCode.PARTLY_CLOUDY -> if (apiIsDay) wCode?.image + "day" else wCode?.image + "night"
+                else -> wCode?.image
+            }
+
+            // aplicar icon
+            val res = resources
+            val resID = res.getIdentifier(wImage, "drawable", packageName)
+            if (resID != 0) {
+                val drawable = this.getDrawable(resID)
+                weatherImage.setImageDrawable(drawable)
+            }
+
+            // aplicar mudanças
+            if (apiIsDay != isDaytime) {
+                isDaytime = apiIsDay
+                recreate()
+            }
         }
     }
 }

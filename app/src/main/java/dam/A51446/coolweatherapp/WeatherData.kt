@@ -1,6 +1,5 @@
 package dam.A51446.coolweatherapp
 
-class WeatherData {
     data class WeatherData(
         var latitude: String,
         var longitude: String,
@@ -14,6 +13,7 @@ class WeatherData {
         var windspeed: Float,
         var winddirection: Int,
         var weathercode: Int,
+        var is_day: Int,
         var time: String
     )
 
@@ -61,5 +61,3 @@ class WeatherData {
         }
         return weatherMap
     }
-
-}
