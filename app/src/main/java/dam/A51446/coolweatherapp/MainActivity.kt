@@ -19,10 +19,16 @@ class MainActivity : AppCompatActivity() {
     private var isDaytime: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        //como o recerate apaga variaveis temporarias, pode reiniciar esta
+        //como o recerate apaga variaveis temporarias, pode reiniciar
         //portanto verificar estado antes de criar a view
         if (savedInstanceState != null) {
             isDaytime = savedInstanceState.getBoolean("isDaytime", false)
+
+            val savedJson = savedInstanceState.getString("lastWeatherData")
+            if (savedJson != null) {
+                val restoredData = Gson().fromJson(savedJson, WeatherData::class.java)
+                window.decorView.post { updateUI(restoredData) }
+            }
         }
 
         val orientation = resources.configuration.orientation
@@ -77,8 +83,7 @@ class MainActivity : AppCompatActivity() {
     class WeatherAPI_Call {
         fun getWeatherData(lat: String, lon: String): WeatherData? {
             return try {
-                val urlString =
-                    "https://api.open-meteo.com/v1/forecast?latitude=$lat&longitude=$lon&current_weather=true&hourly=pressure_msl"
+                val urlString = "https://api.open-meteo.com/v1/forecast?latitude=$lat&longitude=$lon&current_weather=true&hourly=pressure_msl&timezone=auto"
                 val response = URL(urlString).readText()
 
                 Gson().fromJson(response, WeatherData::class.java)
@@ -103,7 +108,9 @@ class MainActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.windSpeed).text = "${current.windspeed} km/h"
 
             findViewById<TextView>(R.id.windDir).text = "${current.winddirection} º"
-            findViewById<TextView>(R.id.Time).text = current.time
+
+            val formattedTime = current.time.split("T").last()
+            findViewById<TextView>(R.id.Time).text = formattedTime
 
             pressure.text = data.hourly.pressure_msl.get(12).toString() + " hPa"
 
