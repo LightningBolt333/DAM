@@ -1,5 +1,8 @@
 package dam.A51446.coolweatherapp
 
+import kotlinx.serialization.Serializable
+
+    @Serializable
     data class WeatherData(
         var latitude: String,
         var longitude: String,
