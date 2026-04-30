@@ -1,12 +1,32 @@
 package com.example.cooljetpackweatherapp.ui
 
 import android.content.res.Configuration
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
+import androidx.compose.material3.R
+import androidx.compose.material3.Text
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dam.A51446.coolweatherapp.WMO_WeatherCode
 import dam.A51446.coolweatherapp.getWeatherCodeMap
+import dam.a51446.cooljetpackweatherapp.ui.CoordinatesCard
+import dam.a51446.cooljetpackweatherapp.ui.WeatherCard
 import dam.a51446.cooljetpackweatherapp.viewmodel.WeatherViewModel
 
 @Composable
@@ -64,5 +84,65 @@ fun WeatherUI(weatherViewModel: WeatherViewModel = viewModel()) {
             },
             onUpdateButtonClick = { weatherViewModel.fetchWeather() }
         )
+    }
+}
+
+@Composable
+fun PortraitWeatherUI(
+    wIcon: Int,
+    latitude: Float,
+    longitude: Float,
+    temperature: Float,
+    windSpeed: Float,
+    windDirection: Int,
+    weathercode: Int,
+    seaLevelPressure: Float,
+    time: String,
+    onLatitudeChange: (String) -> Unit,
+    onLongitudeChange: (String) -> Unit,
+    onUpdateButtonClick: () -> Unit,
+) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        //
+        Image(
+            painter = painterResource(id = wIcon),
+            contentDescription = null,
+            modifier = Modifier.size(150.dp).padding(20.dp)
+        )
+
+        //fileds de input
+        CoordinatesCard(
+            lat = latitude,
+            lon = longitude,
+            onLatChange = onLatitudeChange,
+            onLonChange = onLongitudeChange
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        //display de info
+        WeatherCard(
+            temperature = temperature,
+            windSpeed = windSpeed,
+            windDirection = windDirection,
+            seaLevelPressure = seaLevelPressure,
+            time = time
+        )
+
+        Spacer(modifier = Modifier.weight(1f))
+
+        //botao de ação
+        Button(
+            onClick = onUpdateButtonClick,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(text = stringResource(R.string.update_button))
+        }
     }
 }
