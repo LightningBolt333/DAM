@@ -29,12 +29,20 @@ class WeatherViewModel : ViewModel() {
                 _uiState.value.longitude
             )
             data?.current_weather?.let { current ->
+                //encontrar indice da hora atual nos dados hourly
+                val currentTimeIndex = data.hourly.time.indexOf(current.time)
+                val pressure = if (currentTimeIndex >= 0)
+                    data.hourly.pressure_msl[currentTimeIndex].toFloat()
+                else
+                    0f
+
                 _uiState.update { it.copy(
                     temperature = current.temperature,
                     windspeed = current.windspeed,
-                    winddirection = current.winddirection.toInt(),
+                    winddirection = current.winddirection,
                     weathercode = current.weathercode,
-                    time = current.time
+                    time = current.time,
+                    seaLevelPressure = pressure
                 ) }
             }
         }

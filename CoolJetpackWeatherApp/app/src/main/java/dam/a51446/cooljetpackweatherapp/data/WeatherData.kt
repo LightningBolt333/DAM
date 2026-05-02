@@ -1,4 +1,4 @@
-package dam.A51446.coolweatherapp
+package dam.a51446.cooljetpackweatherapp.data
 
 import kotlinx.serialization.Serializable
 
@@ -20,6 +20,7 @@ import kotlinx.serialization.Serializable
         var time: String
     )
 
+    @Serializable
     data class Hourly(
         var time: ArrayList<String>,
         var temperature_2m: ArrayList<Float>,

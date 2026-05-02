@@ -12,7 +12,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
-import androidx.compose.material3.R
+import dam.a51446.cooljetpackweatherapp.R
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -23,8 +23,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import dam.A51446.coolweatherapp.WMO_WeatherCode
-import dam.A51446.coolweatherapp.getWeatherCodeMap
+
+import dam.a51446.cooljetpackweatherapp.data.WMO_WeatherCode
+import dam.a51446.cooljetpackweatherapp.data.getWeatherCodeMap
 import dam.a51446.cooljetpackweatherapp.ui.CoordinatesCard
 import dam.a51446.cooljetpackweatherapp.ui.WeatherCard
 import dam.a51446.cooljetpackweatherapp.viewmodel.WeatherViewModel
@@ -145,4 +146,27 @@ fun PortraitWeatherUI(
             Text(text = stringResource(R.string.update_button))
         }
     }
+}
+
+@Composable
+fun LandscapeWeatherUI(
+    wIcon: Int,
+    latitude: Float,
+    longitude: Float,
+    temperature: Float,
+    windSpeed: Float,
+    windDirection: Int,
+    weathercode: Int,
+    seaLevelPressure: Float,
+    time: String,
+    onLatitudeChange: (String) -> Unit,
+    onLongitudeChange: (String) -> Unit,
+    onUpdateButtonClick: () -> Unit,
+) {
+    //temp
+    PortraitWeatherUI(
+        wIcon, latitude, longitude, temperature, windSpeed,
+        windDirection, weathercode, seaLevelPressure, time,
+        onLatitudeChange, onLongitudeChange, onUpdateButtonClick
+    )
 }
