@@ -50,6 +50,9 @@ class Pipeline {
 fun buildPipeline(action: Pipeline.() -> Unit): Pipeline {
     //criamos uma instancia da classe Pipeline, aplicamos o lambda e retornamos o resultado
     //neste caso action acaba com a necessidade de chamar a ação que pretendemos fazer diretamente todas as vezes
+    // buildPipeline recebe uma ação que pode ser aplicada a um objeto Pipeline
+    // Pipeline.() -> Unit significa um lambda com receiver. ou seja, action é uma função que vai ser executada dentro de um objeto Pipeline
+    // como se o this fosse esse pipeline
     val pipeline = Pipeline()
     pipeline.action()
     return pipeline
