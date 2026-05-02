@@ -1,5 +1,6 @@
 package dam.a51446.cooljetpackweatherapp.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dam.a51446.cooljetpackweatherapp.data.WeatherApiClient
@@ -29,8 +30,12 @@ class WeatherViewModel : ViewModel() {
                 _uiState.value.longitude
             )
             data?.current_weather?.let { current ->
+
                 //encontrar indice da hora atual nos dados hourly
-                val currentTimeIndex = data.hourly.time.indexOf(current.time)
+                val currentHour = current.time.substring(0, 13) //"2026-05-02T14"
+                val currentTimeIndex = data.hourly.time.indexOfFirst {
+                    it.substring(0, 13) == currentHour
+                }
                 val pressure = if (currentTimeIndex >= 0)
                     data.hourly.pressure_msl[currentTimeIndex].toFloat()
                 else
