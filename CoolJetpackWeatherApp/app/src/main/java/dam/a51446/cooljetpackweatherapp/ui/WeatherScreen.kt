@@ -111,11 +111,13 @@ fun PortraitWeatherUI(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         //
-        Image(
-            painter = painterResource(id = wIcon),
-            contentDescription = null,
-            modifier = Modifier.size(150.dp).padding(20.dp)
-        )
+        if (wIcon != 0) {
+            Image(
+                painter = painterResource(id = wIcon),
+                contentDescription = null,
+                modifier = Modifier.size(150.dp).padding(20.dp)
+            )
+        }
 
         //fileds de input
         CoordinatesCard(
