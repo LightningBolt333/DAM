@@ -17,21 +17,22 @@ fun CoordinatesCard(
     lat: Float,
     lon: Float,
     onLatChange: (String) -> Unit,
-    onLonChange: (String) -> Unit
+    onLonChange: (String) -> Unit,
+    modifier: Modifier = Modifier
 ) {
     var latText by remember { mutableStateOf(lat.toString()) }
     var lonText by remember { mutableStateOf(lon.toString()) }
 
 
-    Card(modifier = Modifier.padding(8.dp)) {
-        Column(modifier = Modifier.padding(16.dp)) {
+    Card(modifier = modifier.padding(8.dp)) {
+        Column(modifier = modifier.padding(16.dp)) {
             Text(text = stringResource(R.string.latitude_label))
             TextField(value = latText, onValueChange = {
                 latText = it
                 onLatChange(it)
             })
 
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = modifier.height(8.dp))
 
             Text(text = stringResource(R.string.longitude_label))
             TextField(value = lonText, onValueChange = {

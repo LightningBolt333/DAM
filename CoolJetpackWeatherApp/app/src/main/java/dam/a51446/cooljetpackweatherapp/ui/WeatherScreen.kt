@@ -23,6 +23,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.compose.foundation.layout.Row
 
 import dam.a51446.cooljetpackweatherapp.data.WMO_WeatherCode
 import dam.a51446.cooljetpackweatherapp.data.getWeatherCodeMap
@@ -165,10 +166,52 @@ fun LandscapeWeatherUI(
     onLongitudeChange: (String) -> Unit,
     onUpdateButtonClick: () -> Unit,
 ) {
-    //temp
-    PortraitWeatherUI(
-        wIcon, latitude, longitude, temperature, windSpeed,
-        windDirection, weathercode, seaLevelPressure, time,
-        onLatitudeChange, onLongitudeChange, onUpdateButtonClick
-    )
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            // imagem à esquerda
+            if (wIcon != 0) {
+                Image(
+                    painter = painterResource(id = wIcon),
+                    contentDescription = null,
+                    modifier = Modifier.size(120.dp).padding(8.dp)
+                )
+            }
+
+            // coordenadas ao centro
+            CoordinatesCard(
+                lat = latitude,
+                lon = longitude,
+                onLatChange = onLatitudeChange,
+                onLonChange = onLongitudeChange,
+                modifier = Modifier.weight(1f)
+            )
+
+            // weather card à direita
+            WeatherCard(
+                temperature = temperature,
+                windSpeed = windSpeed,
+                windDirection = windDirection,
+                seaLevelPressure = seaLevelPressure,
+                time = time,
+                modifier = Modifier.weight(1f)
+            )
+        }
+
+        // botão em baixo
+        Button(
+            onClick = onUpdateButtonClick,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(text = stringResource(R.string.update_button))
+        }
+    }
 }

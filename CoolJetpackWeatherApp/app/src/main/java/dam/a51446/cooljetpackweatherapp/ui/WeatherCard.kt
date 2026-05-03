@@ -13,14 +13,15 @@ fun WeatherCard(
     windSpeed: Float,
     windDirection: Int,
     seaLevelPressure: Float,
-    time: String
+    time: String,
+    modifier: Modifier = Modifier
 ) {
     Card(
-        modifier = Modifier
+        modifier = modifier
             .padding(8.dp)
             .fillMaxWidth()
     ) {
-        Column(modifier = Modifier.padding(16.dp)) {
+        Column(modifier = modifier.padding(16.dp)) {
             WeatherRow(label = "Sea Level Pressure", value = "$seaLevelPressure hPa")
             WeatherRow(label = "Wind Direction", value = "$windDirection°")
             WeatherRow(label = "Wind Speed", value = "$windSpeed km/h")
