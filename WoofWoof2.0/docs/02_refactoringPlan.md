@@ -1,0 +1,6 @@
+## Refactoring Plan
+- The WoofWoof app is a single module where data fetching, business logic, and UI code all live together. The goal is to pull the non-UI parts out into a separate core module so that two different apps can share them without duplicating anything.
+- Start by creating the core module and moving the data classes into it, then the API client, then building a repository on top of that. At each step make sure the project still compiles before moving on.
+- Once core is ready, clean up the existing app module. Rename it to app-xml, point it at core, and refactor the ViewModel so it goes through the repository instead of calling the API directly. The app should look and behave exactly the same as it did in WoofWoof when this is done.
+- Only after app-xml is verified and working should you start building app-compose. It is a fresh module that depends on core the same way app-xml does, but its entire UI is written in Jetpack Compose with animations that do not exist in the XML version.
+- The key thing throughout is to go one step at a time and not move on until the previous step compiles and runs correctly.

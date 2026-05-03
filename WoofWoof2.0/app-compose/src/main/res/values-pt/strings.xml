@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WoofWoof Compose</string>
+    <string name="loading">A carregar...</string>
+    <string name="error_prefix">Erro: %1$s</string>
+    <string name="retry">Tentar Novamente</string>
+    <string name="back">Voltar</string>
+    <string name="dog_image_desc">Imagem de um cão</string>
+    <string name="dog_detail_title">Detalhes do Cão</string>
+    <string name="search_hint">Pesquisar raça... (ex: hound)</string>
+    <string name="search">Pesquisar</string>
+</resources>

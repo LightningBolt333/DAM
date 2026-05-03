@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WoofWoof</string>
+    <string name="retry">Tentar Novamente</string>
+    <string name="search">Pesquisar</string>
+    <string name="search_hint">Pesquisar raça... (ex: hound)</string>
+</resources>

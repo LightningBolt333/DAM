@@ -1,0 +1,11 @@
+R_DEF: Internal format may change without notice
+local
+string app_name
+string back
+string dog_detail_title
+string dog_image_desc
+string error_prefix
+string loading
+string retry
+string search
+string search_hint

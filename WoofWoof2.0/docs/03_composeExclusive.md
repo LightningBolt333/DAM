@@ -1,0 +1,7 @@
+## Jetpack Exclusive Features
+- The Jetpack app uses animations throughout the interface. None of these exist in the XML version and they would be painful to replicate there, which is the whole point.
+- When the list first loads, each card animates in using AnimatedVisibility with a fade and a slight upward slide. This makes the screen feel alive on first render rather than just snapping into place.
+- When a card is tapped and expands to show more detail, the height change animates smoothly using animateContentSize on the card modifier. No jumping.
+- When navigating between the list screen and the detail screen, the transition uses Crossfade so the two screens dissolve into each other instead of cutting hard. This is handled at the root composable level by wrapping the screen choice in Crossfade and targeting the selected item state.
+- While data is loading, instead of a plain spinner, the list shows placeholder cards with a shimmer effect. This is done with rememberInfiniteTransition animating a float back and forth, which gets applied as the alpha of a grey rounded box. Six of these placeholder cards appear while loading and disappear when the real list is ready, wrapped in AnimatedVisibility so the swap itself is also animated.
+None of this exists in app-xml and it should stay that way.

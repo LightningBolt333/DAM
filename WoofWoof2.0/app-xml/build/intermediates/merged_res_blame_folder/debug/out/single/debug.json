@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.example.woofwoof.app-xml-merged_res-39:/layout_item_dog.xml.flat",
+        "source": "com.example.woofwoof.app-xml-main-41:/layout/item_dog.xml"
+    },
+    {
+        "merged": "com.example.woofwoof.app-xml-merged_res-39:/layout_activity_main.xml.flat",
+        "source": "com.example.woofwoof.app-xml-main-41:/layout/activity_main.xml"
+    }
+]
