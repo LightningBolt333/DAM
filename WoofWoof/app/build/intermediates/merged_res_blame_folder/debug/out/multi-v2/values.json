@@ -95,6 +95,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\Miguel Duarte\\Desktop\\School\\DAM\\WoofWoof\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "1,2,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "17,65,113",
+                        "endColumns": "46,46,41",
+                        "endOffsets": "59,107,150"
+                    },
+                    "to": {
+                        "startLines": "946,947,960",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55614,55661,56526",
+                        "endColumns": "46,46,41",
+                        "endOffsets": "55656,55703,56563"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Miguel Duarte\\.gradle\\caches\\transforms-3\\d823e91c832bca3995aafecbebfae2c7\\transformed\\transition-1.2.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11",
@@ -169,23 +186,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Miguel Duarte\\Desktop\\School\\DAM\\AntigravityTP2\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "1,2,3",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "17,65,113",
-                        "endColumns": "46,46,41",
-                        "endOffsets": "59,107,150"
-                    },
-                    "to": {
-                        "startLines": "946,947,960",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55614,55661,56526",
-                        "endColumns": "46,46,41",
-                        "endOffsets": "55656,55703,56563"
-                    }
-                },
-                {
                     "source": "C:\\Users\\Miguel Duarte\\.gradle\\caches\\transforms-3\\a322ded8d4310f74ea9066bdb2728384\\transformed\\recyclerview-1.1.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
@@ -202,25 +202,6 @@
                         "endLines": "506,1105,1106,1107,1115,1116,1117,1803,12601",
                         "endColumns": "55,58,47,55,74,75,71,65,24",
                         "endOffsets": "25672,66174,66222,66278,66964,67040,67112,120278,763522"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Miguel Duarte\\Desktop\\School\\DAM\\AntigravityTP2\\app\\src\\main\\res\\values\\themes.xml",
-                    "from": {
-                        "startLines": "1",
-                        "startColumns": "4",
-                        "startOffsets": "64",
-                        "endLines": "5",
-                        "endColumns": "12",
-                        "endOffsets": "348"
-                    },
-                    "to": {
-                        "startLines": "6515",
-                        "startColumns": "4",
-                        "startOffsets": "457674",
-                        "endLines": "6519",
-                        "endColumns": "12",
-                        "endOffsets": "457954"
                     }
                 },
                 {
@@ -260,6 +241,25 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\Miguel Duarte\\Desktop\\School\\DAM\\WoofWoof\\app\\src\\main\\res\\values\\themes.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "64",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "348"
+                    },
+                    "to": {
+                        "startLines": "6515",
+                        "startColumns": "4",
+                        "startOffsets": "457674",
+                        "endLines": "6519",
+                        "endColumns": "12",
+                        "endOffsets": "457954"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Miguel Duarte\\.gradle\\caches\\transforms-3\\8ab88a2ac0a6a2b37b906378622e0997\\transformed\\swiperefreshlayout-1.1.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2",
@@ -279,6 +279,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\Miguel Duarte\\Desktop\\School\\DAM\\WoofWoof\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "17",
+                        "endColumns": "45",
+                        "endOffsets": "58"
+                    },
+                    "to": {
+                        "startLines": "1970",
+                        "startColumns": "4",
+                        "startOffsets": "130490",
+                        "endColumns": "45",
+                        "endOffsets": "130531"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Miguel Duarte\\.gradle\\caches\\transforms-3\\d696a4d2076d1792d0b6856d9239e2d3\\transformed\\jetified-savedstate-1.2.1\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2",
@@ -293,23 +310,6 @@
                         "startOffsets": "123537",
                         "endColumns": "53",
                         "endOffsets": "123586"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Miguel Duarte\\Desktop\\School\\DAM\\AntigravityTP2\\app\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "1",
-                        "startColumns": "4",
-                        "startOffsets": "17",
-                        "endColumns": "45",
-                        "endOffsets": "58"
-                    },
-                    "to": {
-                        "startLines": "1970",
-                        "startColumns": "4",
-                        "startOffsets": "130490",
-                        "endColumns": "45",
-                        "endOffsets": "130531"
                     }
                 },
                 {

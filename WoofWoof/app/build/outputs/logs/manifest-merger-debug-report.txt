@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:2:1-21:12
-INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:2:1-21:12
-INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:2:1-21:12
-INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:2:1-21:12
+ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:2:1-21:12
 MERGED from [androidx.databinding:viewbinding:8.2.0] C:\Users\Miguel Duarte\.gradle\caches\transforms-3\25e6106d6539b67917765048f3184be0\transformed\jetified-viewbinding-8.2.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Miguel Duarte\.gradle\caches\transforms-3\c4f54cd85dc3b3a61cd7e49810f358ac\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Miguel Duarte\.gradle\caches\transforms-3\93b1cb795f0ace3cb6aef89786a560a3\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
@@ -57,20 +57,20 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Miguel Duarte\.g
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Miguel Duarte\.gradle\caches\transforms-3\0a7fb3ef190b96879c902d0de907ec47\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\Miguel Duarte\.gradle\caches\transforms-3\5c78a29deab80e60a8883801f4fecea2\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 	package
-		INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:4:5-67
+ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:4:5-67
 	android:name
-		ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:4:22-64
+		ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:4:22-64
 application
-ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:6:5-19:19
-INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:6:5-19:19
+ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:6:5-19:19
+INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:6:5-19:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Miguel Duarte\.gradle\caches\transforms-3\c4f54cd85dc3b3a61cd7e49810f358ac\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Miguel Duarte\.gradle\caches\transforms-3\c4f54cd85dc3b3a61cd7e49810f358ac\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Miguel Duarte\.gradle\caches\transforms-3\93b1cb795f0ace3cb6aef89786a560a3\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -88,37 +88,37 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Miguel Duarte\.gra
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Miguel Duarte\.gradle\caches\transforms-3\d83c217c5daff8b7ac4153c67d157458\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Miguel Duarte\.gradle\caches\transforms-3\d83c217c5daff8b7ac4153c67d157458\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 	android:extractNativeLibs
-		INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] C:\Users\Miguel Duarte\.gradle\caches\transforms-3\3a3c9da51d997344f60b63d58c3e81b4\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:9:9-35
+		ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:9:9-35
 	android:label
-		ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:8:9-41
+		ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:8:9-41
 	android:allowBackup
-		ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:7:9-35
+		ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:7:9-35
 	android:theme
-		ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:10:9-46
+		ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:10:9-46
 activity#com.example.woofwoof.MainActivity
-ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:11:9-18:20
+ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:11:9-18:20
 	android:exported
-		ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:13:13-36
+		ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:13:13-36
 	android:name
-		ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:12:13-41
+		ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:12:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:14:13-17:29
+ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:14:13-17:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:15:17-69
+ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:15:17-69
 	android:name
-		ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:15:25-66
+		ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:15:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:16:17-77
+ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:16:17-77
 	android:name
-		ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml:16:27-74
+		ADDED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml:16:27-74
 uses-sdk
-INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml
 MERGED from [androidx.databinding:viewbinding:8.2.0] C:\Users\Miguel Duarte\.gradle\caches\transforms-3\25e6106d6539b67917765048f3184be0\transformed\jetified-viewbinding-8.2.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.databinding:viewbinding:8.2.0] C:\Users\Miguel Duarte\.gradle\caches\transforms-3\25e6106d6539b67917765048f3184be0\transformed\jetified-viewbinding-8.2.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Miguel Duarte\.gradle\caches\transforms-3\c4f54cd85dc3b3a61cd7e49810f358ac\transformed\material-1.11.0\AndroidManifest.xml:20:5-44
@@ -224,9 +224,9 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.print:print:1.0.0] C:\Users\Miguel Duarte\.gradle\caches\transforms-3\5c78a29deab80e60a8883801f4fecea2\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] C:\Users\Miguel Duarte\.gradle\caches\transforms-3\5c78a29deab80e60a8883801f4fecea2\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
 	android:targetSdkVersion
-		INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\AntigravityTP2\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Miguel Duarte\Desktop\School\DAM\WoofWoof\app\src\main\AndroidManifest.xml
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Miguel Duarte\.gradle\caches\transforms-3\607466de2ca8b93a235180121e7d04ce\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Miguel Duarte\.gradle\caches\transforms-3\cc84aa6ef14f03806b53f37eee011e26\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:24:9-32:20
