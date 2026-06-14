@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "311095084320",
+    "project_id": "breakingpointcodex",
+    "storage_bucket": "breakingpointcodex.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:311095084320:android:e74090657545e1fbf48345",
+        "android_client_info": {
+          "package_name": "dam.a51446.breakingpointcodex"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqg-P3vF_HDcrmaShoYjzJ41m5tHq3j4g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
